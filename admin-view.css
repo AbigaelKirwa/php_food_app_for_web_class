@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    font-family: 'Varela Round';
+
+}
+.container
+{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: #05640a;
+    padding-top: 3%;
+    padding-bottom: 5%;
+}
+.container-heading
+{
+    text-align: center;
+    margin-bottom: 5%;
+}
+.container-heading h1
+{
+    font-size: 70px;
+}
+.table-one-heading
+{
+    margin-left: 7%;
+}
+h1
+{
+    color: #ffffff;
+    font-size: 50px;
+}
+table
+{
+    width:90%;
+    background-color: #ffffff;
+}
+table
+{
+    margin-left: 5%;
+    margin-top: 3%;
+}
+table, th, td {
+    border: 2px solid rgb(196, 195, 195);
+    border-collapse: collapse;
+}
+td
+{
+    text-align: center;
+}
+td, th
+{
+    padding: 2%;
+}
+.table-two
+{
+    margin-top: 5%;
+}
+.buttons
+{
+    display: flex;
+    flex-direction: row;
+    margin-left: 5%;
+    margin-top: 3%;
+}
+.buttons button
+{
+    width: max-content;
+    white-space: nowrap;
+    text-align: center;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    color: rgba(53,140,61,1);
+    background-color: #ffffff;
+    border-radius: 55px;
+    border: none;
+    box-shadow: 10px 10px rgb(89,60,60,0.28);
+}
+.buttons button
+{
+    padding-left: 60%;
+    padding-right: 60%;
+    padding-top: 20%;
+    padding-bottom: 20%;
+}
+.buttons .div_edit
+{
+    margin-left: 10%;
+}
+.div_edit button
+{
+    padding-left: 125%;
+    padding-right: 125%;
+    padding-top: 35%;
+    padding-bottom: 35%;
+}
+footer
+{
+    margin-top: 5%;
+    margin-left: 6%;
+}
+footer
+{
+    color: #ffffff;
+    font-size: 20px;
+}
+a
+{
+    text-decoration: none;
+    color: inherit;
+}
+a.pages
+{
+    color: #ffffff;
+    margin-left: 10%;
+}

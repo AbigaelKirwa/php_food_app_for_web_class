@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container
+{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+}
+body
+{
+    font-family: 'Varela Round';
+}
+.navbar-vector img
+{
+    width: 100%;
+    margin-left: 40%;
+    margin-top: -10%;
+}
+.navbar
+{
+    margin-top: -35%;
+    display: flex;
+    flex-direction: row;
+}
+.navbar-list
+{
+    display: flex;
+    flex-direction: row;
+    width: max-content;
+    margin-left: 115%;
+}
+.navbar ul 
+{
+    display: flex;
+    flex-direction: row;
+    width: max-content;
+}
+li
+{
+    list-style: none;
+}
+.navbar ul li
+{
+    white-space: nowrap;
+    text-align: left;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 23px;
+    color: rgba(255,255,255,1);  
+}
+.navbar ul li
+{
+    padding-left: 10%;
+    margin-top: -5%;
+}
+.navbar-list-button
+{
+    margin-left: 40%;
+    margin-top: -2%;
+}
+.navbar-list button
+{
+    width: max-content;
+    white-space: nowrap;
+    text-align: center;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    color: rgba(53,140,61,1);
+    background-color: #ffffff;
+    border-radius: 55px;
+    border: none;
+}
+.navbar-list button
+{
+    padding-left: 60%;
+    padding-right: 60%;
+    padding-top: 20%;
+    padding-bottom: 20%;
+    margin-top: -40%;
+}
+a
+{
+    text-decoration: none;
+    color: inherit;
+}
+.navbar-logo img
+{
+    width: 80%;
+    padding-left: 20%;
+    margin-top: -10%;
+}
+.section-one-main
+{
+    display: flex;
+    flex-direction: row;
+}
+.section-one-main-pic img
+{
+    width: 40%;
+    margin-left: 8%;
+    margin-top: 3%;
+}
+.section-one-main-words
+{
+    width: 30%;
+    margin-left: -27%;
+    margin-top: 10%;
+}
+h1
+{
+    color: #8A3D6E;
+    font-size: 60px;
+    width: max-content;
+}
+h1
+{
+    padding-left: 43%;
+    margin-bottom: 5%;
+}
+.form_row
+{
+    display: flex;
+    flex-direction: row;
+}
+label
+{
+    color: #8A3D6E;
+    font-size: 20px;
+    font-weight: bold;
+    width: max-content;  
+}
+input
+{
+    border: solid;
+    background-color: transparent;
+    border: 2px solid #467D21;
+    box-shadow: 8px 8px rgb(89,60,60,0.28);
+    border-radius: 50px;
+    margin-bottom: 4%;
+    text-align: center;
+    padding: 3% 19%;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+input:focus, textarea:focus, select:focus{
+    outline: none;
+}
+p span
+{
+    color: #467D21;
+    font-size: 20px;
+    font-weight: bolder;
+}
+p
+{
+    margin-top: 2%;
+}
+button
+{
+    width: max-content;
+    white-space: nowrap;
+    text-align: center;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    color: #ffffff;
+    background-color: rgb(36, 114, 44);
+    box-shadow: 10px 10px rgb(89,60,60,0.28);
+    border-radius: 55px;
+    border: none;
+    padding: 3% 15%;
+}
+button
+{
+    margin-top: 4%;
+    margin-bottom: 3%;
+}
