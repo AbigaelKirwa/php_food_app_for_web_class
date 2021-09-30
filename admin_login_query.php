@@ -18,7 +18,7 @@
       if($count == 1) 
       {
         
-         header("refresh:0; url= admin-view.php");
+         header("refresh:0; url= admin-landing-page.php");
          echo'<script>alert("Welcome back")</script>';
       }
       else 

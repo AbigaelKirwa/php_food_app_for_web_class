@@ -1,4 +1,7 @@
-<?php session_start()?>
+<?php
+session_start();
+$connect = mysqli_connect("localhost", "root", "", "food_app_134670");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,8 +28,8 @@
                         <ul>
                             <li><a href="index.php">Home</a></li>
                             <li><a onClick="parent.location='#section-three'" value='click here'>Menu</a></li>
-                            <li><a onClick="parent.location='#section-four'" value='click here'>Order</a></li>
-                            <li><a onClick="parent.location='#section-five'" value='click here'>Pay</a></li>
+                            <li><a onClick="parent.location='client_profile_view.php'" value='click here'>Profile</a></li>
+                            <li><a onClick="parent.location='client_shopping_cart.php'" value='click here'>Cart</a></li>
                         </ul>
                     </div>
                     <div class="navbar-list-button">
@@ -46,157 +49,37 @@
             <div class="section-three-menu-options">
                 <div class="section-three-menu-options-row">
                     <div class="column-one">
-                        <div class="column-one-image">
-                            <img src="https://res.cloudinary.com/due79afep/image/upload/v1626623319/Group_100_sexiz8.png" alt="img1">
-                        </div>
-                        <div class="column-one-words">
-                            <p>Vegan-Pizza<br>$2.00</p>
-                        </div>
-                    </div>
-                    <div class="column-one">
-                        <div class="column-one-image">
-                            <img src="https://res.cloudinary.com/due79afep/image/upload/v1626623319/Group_101_fuyoym.png" alt="img2">
-                        </div>
-                        <div class="column-one-words">
-                            <p>Vegan-Drink<br>$2.00</p>
-                        </div>
+                        <?php
+                            $query = "SELECT * FROM food_menu ORDER BY Id ASC";
+                            $result = mysqli_query($connect, $query);
+                            if(mysqli_num_rows($result))
+                            {
+                                while($row = mysqli_fetch_array($result))
+                                {
+                        ?>
+                        
+                        <form method="post" action="client_shopping_cart_process.php">
+                            <div class="column-one-image">
+                                <img class="grid-item-1" src="asset/<?php echo$row["Image_Path"]; ?>">
+                                <p name="Food_name"><b><?php echo$row["Food_name"]; ?></b></p>
+                            </div>
+                            <div class="column-one-words">
+                                <p name="Food_price" class="price">$<?php echo$row["Price"];?></p></td><br>
+                                <input type="hidden" name="name" value="<?php echo $row["Food_name"]; ?>" />  
+                                <input type="hidden" name="price" value="<?php echo $row["Price"]; ?>" /> 
+                                <p>Quantity</td></p>
+                                <input name="Food_quantity" type="number" max="10" min="1"></input></td>
+                                <a href="client_shopping_cart.php"><button type="submit" name="add_to_cart" class="add_to_cart">add to cart</button></a></td>
+                            </div>
+                        </form>
+                      
+                        <?php
+                            }
+                        }
+                        ?>
                     </div>
                 </div>
-                <div class="section-three-menu-options-row">
-                    <div class="column-one">
-                        <div class="column-one-image">
-                            <img src="https://res.cloudinary.com/due79afep/image/upload/v1626623319/Group_107_naux5a.png" alt="img1">
-                        </div>
-                        <div class="column-one-words">
-                            <p>Vegan-Casserole<br>$1.00</p>
-                        </div>
-                    </div>
-                    <div class="column-one">
-                        <div class="column-one-image">
-                            <img src="https://res.cloudinary.com/due79afep/image/upload/v1626623320/Group_108_itdz3a.png" alt="img2">
-                        </div>
-                        <div class="column-one-words">
-                            <p>Vegetables<br>$4.00</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="section-three-menu-options-row">
-                    <div class="column-one">
-                        <div class="column-one-image">
-                            <img src="https://res.cloudinary.com/due79afep/image/upload/v1626623320/Group_123_ak1w03.png" alt="img1">
-                        </div>
-                        <div class="column-one-words">
-                            <p>Vegan-Rice<br>$5.00</p>
-                        </div>
-                    </div>
-                    <div class="column-one">
-                        <div class="column-one-image">
-                            <img src="https://res.cloudinary.com/due79afep/image/upload/v1626623321/Group_124_cfs2px.png" alt="img2">
-                        </div>
-                        <div class="column-one-words">
-                            <p>Vegan-Dessert<br>$3.00</p>
-                        </div>
-                    </div>
-                </div>
-
             </div>
-
-        </section>
-        <section class="section-four" id="section-four">
-            <div class="section-four-heading">
-                <h1>Order</h1>
-            </div>
-            <div class="section-tab">
-                <form action="">
-                    <div class="section-tab-sub-heading">
-                        <h4>Order</h4>
-                    </div>
-                    <div class="part-one">
-                        <div class="part-one-row">
-                            <div class="part-one-row-words">
-                                <p>Order ID</p>
-                            </div>
-                            <div class="part-one-row-input">
-                                <input type="text" style="margin-left: 80%; ">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="part-one">
-                        <div class="part-one-row">
-                            <div class="part-one-row-words">
-                                <p>Food Ordered</p>
-                            </div>
-                            <div class="part-one-row-input">
-                                <input type="text" style="margin-left: 49%;">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="part-one">
-                        <div class="part-one-row">
-                            <div class="part-one-row-words">
-                                <p>Amount Ordered</p>
-                            </div>
-                            <div class="part-one-row-input">
-                                <input type="text" style="margin-left: 32%;">
-                            </div>
-                        </div>
-                    </div>
-                </form>
-
-            </div>
-        </section>
-        <section class="section-five" id="section-five">
-            <div class="section-four-heading">
-                <h1>Payment</h1>
-            </div>
-            <div class="section-tab" style="padding-bottom: 10%; padding-top: 7%;">
-                <form action="">
-                    <div class="mySlides fade">
-                        <div class="section-tab-sub-heading">
-                            <h4>Cash</h4>
-                        </div>
-                    </div>
-                    <div class="mySlides fade">
-                        <div class="section-tab-sub-heading">
-                            <h4>Mobile money</h4>
-                        </div>
-                    </div>
-                    <div class="mySlides fade">
-                        <div class="section-tab-sub-heading">
-                            <h4>Credit Card</h4>
-                        </div>
-                    </div>  
-                        <div class="part-one">
-                            <div class="part-one-row">
-                                <div class="part-one-row-words">
-                                    <p>Payment Method</p>
-                                </div>
-                                <div class="part-one-row-input">
-                                    <input type="text" style="margin-left: 27%;">
-                            </div>
-                        </div>
-                        <div class="part-one">
-                            <div class="part-one-row">
-                                <div class="part-one-row-words">
-                                    <p>Order ID</p>
-                                </div>
-                                <div class="part-one-row-input">
-                                    <input type="text" style="margin-left: 78%;">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="part-one">
-                            <div class="part-one-row">
-                                <div class="part-one-row-words">
-                                    <p>Payment Amount</p>
-                                </div>
-                                <div class="part-one-row-input">
-                                    <input type="text" style="margin-left: 25%;">
-                                </div>
-                            </div>
-                        </div>
-                    </div>   
-                </form>
         </section>
         <section class="section-six">
             <h1>Follow us on our<br>social media pages</h1>
@@ -211,14 +94,6 @@
                     <a href="#"><i id="fafaicon" class="fa fa-instagram" aria-hidden="true"></i></a>
                 </div>
             </div>
-        </section>
-        <section class="lower-section-borders">
-            <div class="lower-section-border-left">
-                <img src="https://res.cloudinary.com/due79afep/image/upload/v1626712485/Group_120_vc0lj8.png" alt="">
-            </div>
-            <div class="lower-section-border-right">
-                <img src="https://res.cloudinary.com/due79afep/image/upload/v1626712485/Group_121_fkvv3x.png" alt="">
-            </div>   
         </section>
         <footer id="footer">
             <div class="footer-copyright">

@@ -55,11 +55,6 @@
                             <label for="password">Password</label>
                             <input type="password" required  name="ppass" style="margin-left: 10%;">
                         </div>
-                        <!-- <div class="form_row">
-                            <label for="email" type="email" style="margin-top: 3%;">Email</label>
-                            <input type="text"  name="pmail" style="margin-left: 17%;">
-                        </div> -->
-                        <!-- <p>Dont have an account? <span><a href="admin_register.php" value='click here'>Sign Up</a></span></p> -->
                         <button type="submit" name="Login">Log In</button>
                         
                     </form>

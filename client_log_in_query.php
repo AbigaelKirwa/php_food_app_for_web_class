@@ -18,12 +18,11 @@
 		
       if($count == 1) 
       {
-         // header("refresh:0; url= menu-order-payment.php");
-         // echo'<script>alert("Welcome back")</script>';
          if (is_array($row))
          {
             $_SESSION["username"]= $row['username'];
             $_SESSION["password"]= $row['password'];
+            $_SESSION["client_id"]= $row['sign_up_id'];
             header("refresh:0; url= menu-order-payment.php");
             echo'<script>alert("Welcome back")</script>';
          }

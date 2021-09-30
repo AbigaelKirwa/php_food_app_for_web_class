@@ -5,12 +5,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-body
-{
-    font-family: 'Varela Round';
-    background-color: #05640a;
-
-}
 .container
 {
     width: 100%;
@@ -19,26 +13,33 @@ body
     display: flex;
     flex-direction: column;
     position: absolute;
-    padding-top: 3%;
-    padding-bottom: 5%;
 }
-.container-heading
+body
 {
-    text-align: center;
-    margin-bottom: 5%;
+    font-family: 'Varela Round';
+    background-color: #22710B;
 }
-.container-heading h1
+.html_session
 {
-    font-size: 70px;
-}
-.table-one-heading
-{
-    margin-left: 7%;
+    color: #ffffff;
+    background-color: #22710B;
+    padding-left: 5%;
+    padding-top: 5%;
 }
 h1
 {
     color: #ffffff;
     font-size: 50px;
+}
+h2
+{
+    color: #ffffff;
+    font-size: 30px;   
+}
+h2
+{
+    padding-left: 5%;
+    padding-top: 3%;  
 }
 table
 {
@@ -62,18 +63,17 @@ td, th
 {
     padding: 2%;
 }
-.table-two
+a
 {
-    margin-top: 5%;
+    text-decoration: none;
+    color: inherit;
 }
-.buttons
+a.pages
 {
-    display: flex;
-    flex-direction: row;
-    margin-left: 5%;
-    margin-top: 3%;
+    color: #ffffff;
+    margin-left: 10%;
 }
-.buttons button
+a.checkout_style
 {
     width: max-content;
     white-space: nowrap;
@@ -87,41 +87,27 @@ td, th
     border: none;
     box-shadow: 10px 10px rgb(89,60,60,0.28);
 }
-.buttons button
+a.checkout_style
 {
-    padding-left: 60%;
-    padding-right: 60%;
-    padding-top: 20%;
-    padding-bottom: 20%;
+    margin-top: 3%;
+    margin-left: 5%;
 }
-.buttons .div_edit
+a.checkout_style
 {
-    margin-left: 10%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
 }
-.div_edit button
+.action
 {
-    padding-left: 125%;
-    padding-right: 125%;
-    padding-top: 35%;
-    padding-bottom: 35%;
+    padding-left: 9%;
+    padding-right: 9%;
 }
-footer
+.checkout_input
 {
-    margin-top: 5%;
-    margin-left: 6%;
-}
-footer
-{
-    color: #ffffff;
-    font-size: 20px;
-}
-a
-{
-    text-decoration: none;
-    color: inherit;
-}
-a.pages
-{
-    color: #ffffff;
-    margin-left: 10%;
+    background-color: transparent;
+    border: none;
+    font-family: 'Varela Round';
+    font-size: 17px;
 }

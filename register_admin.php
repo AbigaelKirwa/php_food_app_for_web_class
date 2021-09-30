@@ -35,7 +35,7 @@ if($password == $confirm_password){
     
     if($conn -> query($sql_insert) === TRUE)
     {
-        header("Location: admin-view.php");
+        header("Location: admin-view-registered-clients-and-admins.php");
         echo '<script>alert("Succesful registration <br> <hl> WELCOME</h1>)</script>"';
         
     }

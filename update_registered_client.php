@@ -9,10 +9,10 @@ if(isset($_POST['update'])){
     $id = $_POST['id'];
 
 
-    $sql =  "UPDATE `admin_register` SET `username`='$username',`password`='$password',`confirm-password`='$confirm_password',`email`='$email' WHERE `sign_up_id`='$id'";
+    $sql =  "UPDATE `client_register` SET `username`='$username',`password`='$password',`confirm-password`='$confirm_password',`email`='$email' WHERE `sign_up_id`='$id'";
     $result = $conn -> query($sql);
     if($result == TRUE){
-        header("Location: admin-view.php");
+        header("Location: admin-view-registered-clients-and-admins.php");
         echo '<script>alert("Record succesfully updated")</script>"';
     }else{
         echo "Error:" . $sql . "<br>" . $conn -> error;
@@ -24,7 +24,7 @@ if(isset($_POST['update'])){
 
 if (isset($_GET['id'])){
     $user_id = $_GET['id'];
-    $sql = " SELECT * FROM `admin_register`";
+    $sql = " SELECT * FROM `client_register`";
     $result = $conn -> query($sql);
     if($result -> num_rows > 0 ){
         while($row = $result -> fetch_assoc()){
@@ -36,7 +36,6 @@ if (isset($_GET['id'])){
         }
         ?>
 
-        
 <!DOCTYPE html>
 <html lang="en">
 <head>

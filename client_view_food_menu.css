@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container
+{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+}
+body
+{
+    font-family: 'Varela Round';
+}
+p
+{
+    font-size: 30px;
+}
+button
+{
+    width: max-content;
+    white-space: nowrap;
+    text-align: center;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: rgba(53,140,61,1);
+    border-radius: 55px;
+    border: none;
+    box-shadow: 10px 10px rgb(89,60,60,0.28);
+}
+button
+{
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-top: 3%;
+}
+button:hover
+{
+    cursor:pointer;
+}
+img
+{
+    width: 20%;
+}
+.main_enclosure
+{
+    display: grid;
+    grid-row-gap: 10px;
+    margin-left: 5%;
+}
+.grid-item-1
+{
+    grid-column-start: 1;
+    grid-column-end: 1;
+}
+.grid-item-2
+{
+    grid-column-start: 2;
+    grid-column-end: 2;
+}
+.grid-item-3
+{
+    grid-column-start: 3;
+    grid-column-end: 3;
+}
+.grid-item-3
+{
+    grid-column-start: 4;
+    grid-column-end: 4;
+}

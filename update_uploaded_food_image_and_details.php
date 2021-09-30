@@ -1,18 +1,17 @@
 <?php 
-include "connect.php";
+include "dbconnect.php";
+$conn = new mysqli("localhost", "root", "", "food_app_134670");
 
 if(isset($_POST['update'])){
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $confirm_password = $_POST['confirm-password'];
-    $email = $_POST['email'];
+    $Food_name = $_POST['Food_name'];
+    $Image_Path = $_POST['Image_Path'];
+    $Price = $_POST['Price'];
     $id = $_POST['id'];
 
-
-    $sql =  "UPDATE `client_register` SET `username`='$username',`password`='$password',`confirm-password`='$confirm_password',`email`='$email' WHERE `sign_up_id`='$id'";
+    $sql =  "UPDATE `food_menu` SET `Food_name`='$Food_name',`Image_Path`='$Image_Path',`Price`='$Price' WHERE `Id`='$id'";
     $result = $conn -> query($sql);
     if($result == TRUE){
-        header("Location: admin-view.php");
+        header("Location: admin-view-food-image-and-details.php");
         echo '<script>alert("Record succesfully updated")</script>"';
     }else{
         echo "Error:" . $sql . "<br>" . $conn -> error;
@@ -24,15 +23,14 @@ if(isset($_POST['update'])){
 
 if (isset($_GET['id'])){
     $user_id = $_GET['id'];
-    $sql = " SELECT * FROM `client_register`";
+    $sql = " SELECT * FROM `food_menu`";
     $result = $conn -> query($sql);
     if($result -> num_rows > 0 ){
         while($row = $result -> fetch_assoc()){
-            $username = $row['username'];
-            $password = $row['password'];
-            $confirm_password = $row['confirm-password'];
-            $email = $row['email'];
-            $id = $row['sign_up_id'];
+            $Food_name = $row['Food_name'];
+            $Image_Path = $row['Image_Path'];
+            $Price = $row['Price'];
+            $id = $row['Id'];
         }
         ?>
 
@@ -49,26 +47,23 @@ if (isset($_GET['id'])){
 </head>
 <body>
         
-        <h2>Update User Details</h2>
+        <h2>Update Food Details</h2>
         <form action="" method="post">
-                <legend>Personal Informartion</legend>
-                Username: <br>
-                <input type="text" name="username" value="<?php echo $username;?>">
-                <br>
+                <legend>Food details</legend>
                 ID number:<br>
                 <input type="text" name="id" value="<?php echo $id;?>">
                 <br>
-                password: <br>
-                <input type="text" name="password" value="<?php echo $password;?>">
+                Food_name: <br>
+                <input type="text" name="Food_name" value="<?php echo $Food_name;?>">
                 <br>
-                Confirm password: <br>
-                <input type="text" name="confirm-password" value="<?php echo $confirm_password;?>">
+                Image_Path: <br>
+                <input type="text" name="Image_Path" value="<?php echo $Image_Path;?>">
                 <br>
-                Email: <br>
-                <input type="email" name="email" value="<?php echo $email;?>">
+                Price: <br>
+                <input type="number" name="Price" value="<?php echo $Price;?>">
                 <br><br>
                 
-                <input type="submit" value="update" name="update">
+                <input type="submit" value="Update" name="update">
         </form>
     </body>
 </html>

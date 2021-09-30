@@ -63,14 +63,14 @@
                                <td><?php echo $row['password']; ?></td>
                                <td><?php echo $row['confirm-password']; ?></td>
                                <td><?php echo $row['email']; ?></td>
-                               <td><a name="update" href="client_update.php?id=<?php echo $row['sign_up_id']; ?>">EDIT</a>&nbsp;<br><br>
-                               <a name="delete" href="client_delete.php?id=<?php echo $row['sign_up_id']; ?>">DELETE</a></td>
+                               <td><a name="update" href="update_registered_client.php?id=<?php echo $row['sign_up_id']; ?>">EDIT</a>&nbsp;<br><br>
+                               <a name="delete" href="delete_registered_client.php?id=<?php echo $row['sign_up_id']; ?>">DELETE</a></td>
                            </tr>
                            <?php
                         }
                             //display the link of the pages in URL  
                         for($page = 1; $page<= $number_of_page; $page++) {  
-                            echo '<a class = "pages" href = "admin-view.php?page=' . $page . '">' . $page . ' </a>';  
+                            echo '<a class = "pages" href = "admin-view-registered-clients-and-admins.php?page=' . $page . '">' . $page . ' </a>';  
                         }  
                      }
                     ?>
@@ -79,7 +79,7 @@
             </div>
             <div class="buttons">
             <div class="div_delete">
-                <button name="delete_btn" ><a href="client_create.php">Create user</a></button>
+                <button name="delete_btn" ><a href="register_client.php">Create user</a></button>
             </div>
         </div>
         <div class="table-two">
@@ -129,26 +129,26 @@
                            <td><?php echo $row['password']; ?></td>
                            <td><?php echo $row['confirm-password']; ?></td>
                            <td><?php echo $row['email']; ?></td>
-                           <td><a name="update" href="admin_update.php?id=<?php echo $row['sign_up_id']; ?>">EDIT</a>&nbsp;<br><br>
-                           <a name="delete" href="admin_delete.php?id=<?php echo $row['sign_up_id']; ?>">DELETE</a></td>
+                           <td><a name="update" href="update_registered_admin.php?id=<?php echo $row['sign_up_id']; ?>">EDIT</a>&nbsp;<br><br>
+                           <a name="delete" href="delete_registered_admin.php?id=<?php echo $row['sign_up_id']; ?>">DELETE</a></td>
                        </tr>
                        <?php
                     }
                 }
                 //display the link of the pages in URL  
                 for($page = 1; $page<= $number_of_page; $page++) {  
-                    echo '<a class = "pages" href = "admin-view.php?page=' . $page . '">' . $page . ' </a>';  
+                    echo '<a class = "pages" href = "admin-view-registered-clients-and-admins.php?page=' . $page . '">' . $page . ' </a>';  
                 }  
             ?>
             </table>
         </div>
         <div class="buttons">
             <div class="div_delete">
-                <button name="delete_btn" ><a href="admin_create.php">Create user</a></button>
+                <button name="delete_btn" ><a href="register_admin.php">Create user</a></button>
             </div>
         </div>
         <footer>
-            <p><a href="index.php">Main Page</a></p>
+        <p><a href="admin-landing-page.php">Back</a></p>
         </footer>
         
 
